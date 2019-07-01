@@ -1,0 +1,26 @@
+{
+    "name": "chrischuang/lib-slack",
+    "type": "library",
+    "authors": [
+        {
+            "name": "Chris Chuang",
+            "email": "ycchuang0927@gmail.com"
+        }
+    ],
+    "require-dev": {
+        "mockery/mockery": "~1.0",
+        "phpunit/phpunit": "^7.1"
+    },
+    "autoload": {
+        "psr-4": {
+            "LibSlack\\": "src/"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "LibSlack\\Tests\\": "tests/"
+        }
+    },
+    "require": {
+    }
+}
