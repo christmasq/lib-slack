@@ -4,6 +4,8 @@
 namespace LibSlack\Components;
 
 
+use LibSlack\Utility;
+
 /**
  * Class Component
  * parent class of Attachment, Block, Element class
@@ -55,6 +57,6 @@ class Component
      */
     public function toArray()
     {
-        return json_decode(json_encode($this), true);
+        return Utility::objectToArray($this);
     }
 }
