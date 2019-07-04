@@ -10,6 +10,7 @@ use LibSlack\Components\Elements\Image;
 use LibSlack\Components\Elements\Overflow;
 use LibSlack\Components\Elements\SelectMenu;
 use LibSlack\Components\Objects\Dialog;
+use LibSlack\Components\Objects\Text;
 use LibSlack\Objects\Components\PlainText;
 
 /**
@@ -108,6 +109,11 @@ class Element
         $date_picker = new DatePicker($action_id, $confirm, $initial_date);
 
         $this->addElement($date_picker->toArray());
+    }
+
+    public function addText($text) {
+        $text_object = new Text($text);
+        $this->addElement($text_object);
     }
 
     /**
