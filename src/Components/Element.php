@@ -11,7 +11,7 @@ use LibSlack\Components\Elements\Overflow;
 use LibSlack\Components\Elements\SelectMenu;
 use LibSlack\Components\Objects\Dialog;
 use LibSlack\Components\Objects\Text;
-use LibSlack\Objects\Components\PlainText;
+use LibSlack\Utility;
 
 /**
  * Create element component
@@ -111,9 +111,14 @@ class Element
         $this->addElement($date_picker->toArray());
     }
 
+
+    /**
+     * Create a text object for section block
+     * @param $text
+     */
     public function addText($text) {
         $text_object = new Text($text);
-        $this->addElement($text_object);
+        $this->addElement(Utility::objectToArray($text_object));
     }
 
     /**
