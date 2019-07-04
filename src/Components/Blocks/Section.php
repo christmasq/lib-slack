@@ -15,7 +15,7 @@ use LibSlack\Components\Objects\PlainText;
 class Section extends Component
 {
     /**
-     * @var PlainText
+     * @var Text
      */
     public $text;
     /**
@@ -42,7 +42,7 @@ class Section extends Component
     {
         $this->require_fields = ['type', 'text'];
         $this->type = Block::TYPE_SECTION;
-        $this->text = (is_string($text)) ? new PlainText($text) : $text;
+        $this->text = (is_string($text)) ? new Text($text) : $text;
 
         // set optional fields
         $this->setOptionalFields($params);
