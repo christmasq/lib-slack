@@ -259,4 +259,25 @@ class ElementTest extends TestCase
         // assert
         $this->assertEquals($expected, $element->elements);
     }
+
+    /**
+     * test add divider block method
+     */
+    public function testAddText()
+    {
+        $element = new Element();
+        $element->addText('text');
+
+        // expected
+        $expected = [
+            [
+                'type' => 'mrkdwn',
+                'text' => 'text',
+                'verbatim' => false,
+            ],
+        ];
+
+        // assert
+        $this->assertEquals($expected, $element->elements);
+    }
 }

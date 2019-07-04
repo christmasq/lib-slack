@@ -6,7 +6,7 @@ namespace LibSlack\Components\Blocks;
 
 use LibSlack\Components\Block;
 use LibSlack\Components\Component;
-use LibSlack\Components\Objects\PlainText;
+use LibSlack\Components\Objects\Text;
 
 /**
  * Class Section
