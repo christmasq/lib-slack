@@ -85,9 +85,9 @@ class BlockTest extends TestCase
             [
                 'type' => 'section',
                 'text' => [
-                    'type' => 'plain_text',
+                    'type' => 'mrkdwn',
                     'text' => 'text',
-                    'emoji' => true,
+                    'verbatim' => false,
                 ],
                 'accessory' => [
                     'type' => 'image',
