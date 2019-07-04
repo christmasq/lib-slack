@@ -1,3 +1,7 @@
+### [1.0.2] - 2019-07-05
+
+- fixed section undefined error and add test case
+
 ### [1.0.1] - 2019-07-05
 
 - Add Utility class & objectToArray method
