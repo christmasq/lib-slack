@@ -45,7 +45,7 @@
  $element->addImage(string $image_url, string $alt_text);
  $element->addSelectMenu(string $type, $placeholder, string $action_id, array $params);
  $element->addOverflow(string $action_id, array $options, Dialog $confirm);
- $element->addDatePicker(string $action_id, Dialog $confirm = null, string $initial_date);
+ $element->addDatePicker(string $action_id, Dialog $confirm, string $initial_date);
  $element->addText($text);
  ```
  
