@@ -111,3 +111,20 @@
    -  每個 block 可以設定 block_id 作為觸發判斷使用
    -  除了 Image 之外的 element 都可以設定 `action_id` 欄位作為觸發判斷使用
    -  除了 Image 之外的 element 都可以設定 `confirm` 欄位，傳入 `Dialog` 物件觸發彈出視窗功能
+
+###Objects：
+ https://api.slack.com/reference/messaging/composition-objects
+
+ - 主要包含
+   - **Text**
+   - **Confirmation dialog**
+   - **Option**
+   - **Option group**
+
+ - 進階說明：
+   - `Text` 中包含 **text** 及 **plain_text** 兩種型態，較廣泛使用的是 `PlainText` Object
+   - `Dialog` 可設定 **title、text、confirm、deny** 四個部分，進階使用如輸入資料還要再研究
+   - `Option` 及 `Option group` 主要提供給 **Select Menus** 及 **Overflow Menu** 使用
+
+###Attachment (已為 legacy，現作為輔助 block 使用)
+ https://api.slack.com/reference/messaging/attachments
