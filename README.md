@@ -1,14 +1,16 @@
 # lib-slack
 
-##如何使用此套件：
+https://gitlab.com/chrischuang/lib-slack
+
+## 如何使用此套件：
 
  - 建立 Block 物件
- ```
+ ```php
  $block = new Block();
  ```
  
  - Block 有 5 種 Layout block
- ```
+ ```php
  Block::TYPE_SECTION = 'section';
  Block::TYPE_DIVIDER = 'divider';
  Block::TYPE_IMAGE = 'image';
@@ -17,7 +19,7 @@
  ```
  
  - 加入需要的 Layout blocks
- ```
+ ```php
  $block->addSection($text, array $params);
  $block->addImage($image_url, $alt_text, array $params);
  $block->addAction(array $elements, $block_id);
@@ -26,7 +28,7 @@
  ```
  
  - 若是屬於 Action 或 Context，則建立 Block elements 並加入，主要共有 6 種 elements (select menu 包含 5 種型態)
- ```
+ ```php
  Element::TYPE_BUTTON = 'button';
  Element::TYPE_IMAGE = 'image';
  Element::TYPE_STATIC_SELECT = 'static_select';
@@ -39,7 +41,7 @@
  ```
  
  - 建立 Element 物件並加入 block elements，其中 select menu 以 type 區分要加入的 element object
- ```
+ ```php
  $element = new Element();
  $element->addButton($text, $action_id, array $params);
  $element->addImage(string $image_url, string $alt_text);
@@ -50,12 +52,12 @@
  ```
  
  - 將 element 加入到 layout block 中 (以 Action 為例)
- ```
+ ```php
  $block->addAction($element->elements, $block_id);
  ```
  
  - 輸出 block 成 array 型態，postMessage 時代入參數送出
- ```
+ ```php
  //$block->blocks 為  array type
  
  $params = [
@@ -75,9 +77,9 @@
 
 ---
 
-##Components 組成說明：
+## Components 組成說明：
 
-###Layout blocks：
+### Layout blocks：
  https://api.slack.com/reference/messaging/blocks
 
  - 作為主要元件的容器，主要包含
@@ -91,7 +93,7 @@
    -  `Section` 的 `accessory` 欄位可代入一個 element，顯示於 Section 右方 Actions 的 `elements` 欄位可代入多個 elements，組成**多觸發行為** (如多個 Buttons)
    -  `Context` 的 `elements` 欄位可代入多個 `image elements` or `text objects`，作為**唯讀顯示資訊**使用
 
-###Block elements：
+### Block elements：
  https://api.slack.com/reference/messaging/block-elements
 
  - 主要包含
@@ -112,7 +114,7 @@
    -  除了 Image 之外的 element 都可以設定 `action_id` 欄位作為觸發判斷使用
    -  除了 Image 之外的 element 都可以設定 `confirm` 欄位，傳入 `Dialog` 物件觸發彈出視窗功能
 
-###Objects：
+### Objects：
  https://api.slack.com/reference/messaging/composition-objects
 
  - 主要包含
@@ -126,5 +128,5 @@
    - `Dialog` 可設定 **title、text、confirm、deny** 四個部分，進階使用如輸入資料還要再研究
    - `Option` 及 `Option group` 主要提供給 **Select Menus** 及 **Overflow Menu** 使用
 
-###Attachment (已為 legacy，現作為輔助 block 使用)
+### Attachment (已為 legacy，現作為輔助 block 使用)
  https://api.slack.com/reference/messaging/attachments
